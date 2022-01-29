@@ -22,19 +22,27 @@ jobs:
         uses: hmarr/debug-action@v2
 
       - uses: actions/checkout@v2
-
+      
       - name: Evaluate selected labels
         id: bump
         uses: zwaldowski/match-label-action@v2
         with:
           allowed: major,minor,patch
 
-      # - uses: zwaldowski/semver-release-action@v2
-      #   with:
-      #     bump: ${{ steps.bump.outputs.match }}
-      #     github_token: ${{ secrets.GITHUB_TOKEN }}
+      - uses: zwaldowski/semver-release-action@v2
+        id: semantic
+        with:
+          bump: ${{ steps.bump.outputs.match }}
+          prefix: v
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: debug version
+        shell: bash
+        run: |
+          echo ${{ steps.semantic.outputs.version }}
 
       - name: Create Release
         uses: release-drafter/release-drafter@v5.13.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        
