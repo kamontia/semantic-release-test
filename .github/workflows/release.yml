@@ -2,7 +2,7 @@ name: Release
 
 on:
   pull_request:
-    branches: [master]
+    branches: [release]
     types: [opened, reopened, synchronize, labeled]
 
   workflow_dispatch:
@@ -22,7 +22,7 @@ jobs:
         uses: hmarr/debug-action@v2
 
       - uses: actions/checkout@v2
-      
+
       - name: Evaluate selected labels
         id: bump
         uses: zwaldowski/match-label-action@v2
