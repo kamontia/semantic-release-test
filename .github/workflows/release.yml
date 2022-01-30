@@ -34,6 +34,7 @@ jobs:
         with:
           bump: ${{ steps.bump.outputs.match }}
           prefix: v
+          dry-run: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: debug version
@@ -43,6 +44,9 @@ jobs:
 
       - name: Create Release
         uses: release-drafter/release-drafter@v5.13.0
+        with:
+          name: ${{ steps.semantic.outputs.version }} Release
+          tag: ${{ steps.semantic.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
