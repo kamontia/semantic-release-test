@@ -34,19 +34,19 @@ jobs:
         with:
           bump: ${{ steps.bump.outputs.match }}
           prefix: v
-          dry-run: true
+          dry_run: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: debug version
         shell: bash
         run: |
-          echo ${{ steps.semantic.outputs.version }}
+          echo ${{ steps.semantic.outputs.version_tag }}
 
       - name: Create Release
         uses: release-drafter/release-drafter@v5.13.0
         with:
-          name: ${{ steps.semantic.outputs.version }} Release
-          tag: ${{ steps.semantic.outputs.version }}
+          name: ${{ steps.semantic.outputs.version_tag }} Release🎉
+          tag: ${{ steps.semantic.outputs.version_tag }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         
