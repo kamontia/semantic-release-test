@@ -37,6 +37,12 @@ jobs:
           dry_run: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: "Skip CI label test"
+        if: ${{ !contains(github.event.pull_request.labels.*.name, 'skip ci') }}
+        shell: bash
+        run: |
+          echo "Skip CI label test when 'skip ci' label is labeled"
+
       - name: Create Release
         uses: release-drafter/release-drafter@v5.13.0
         id: release
