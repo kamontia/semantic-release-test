@@ -2,7 +2,7 @@ name: Release
 
 on:
   pull_request:
-    branches: [release]
+    branches: [main]
     types: [opened, reopened, synchronize, labeled]
 
   workflow_dispatch:
@@ -62,6 +62,6 @@ jobs:
           draft: true
           files: |
             README.md
-            *.ymlaction-gh-release directory recursive
-            artifacts/**/artifact
+            # *.ymlaction-gh-release directory recursive
+            # artifacts/**/artifact
             
