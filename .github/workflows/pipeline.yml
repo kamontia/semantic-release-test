@@ -52,13 +52,13 @@ jobs:
           # Required mail subject:
           subject: Github Actions job result
           # Required recipients' addresses:
-          to: kamontia@gmail.com
+          to: kamontia@gmail.com,ci_script@jcom.zaq.ne.jp
           # Required sender full name (address can be skipped):
           from: ci_script@jcom.zaq.ne.jp
           # Optional whether this connection use TLS (default is true if server_port is 465)
           secure: true
           # Optional plain body:
-          body: Build job of ${{github.repository}} completed successfully!
+          # body: Build job of ${{github.repository}} completed successfully!
           # Optional HTML body read from file:
           html_body: file://.github/mail_notification.html
           # Optional carbon copy recipients:
