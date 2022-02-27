@@ -1,124 +1,79 @@
-<!DOCTYPE html>
-<html lang="ja">
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "https://www.w3.org/TR/html4/loose.dtd">
+<html>
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="target-densitydpi=device-dpi,width=device-width,maximum-scale=1.0,user-scalable=yes">
+<meta http-equiv="Content-Language" content="ja">
 <style type="text/css">
-<!--
-body {
-  font-family: "Open Sans", sans-serif;
-  line-height: 1.25;
+table{
+  width: 100%;
+  border-collapse:separate;
+  border-spacing: 0;
 }
 
-table {
-  border-collapse: collapse;
-  margin: 0 auto;
-  padding: 0;
-  width: 650px;
-  table-layout: fixed;
+table th:first-child{
+  border-radius: 5px 0 0 0;
 }
 
-table tr {
-  background-color: #e6f2f5;
-  padding: .35em;
-  border-bottom: 2px solid #fff;
+table th:last-child{
+  border-radius: 0 5px 0 0;
+  border-right: 1px solid #3c6690;
 }
-table th,
-table td {
-  padding: 1em 10px 1em 1em;
-  border-right: 2px solid #fff;
+
+table th{
+  text-align: center;
+  color:white;
+  background: linear-gradient(#829ebc,#225588);
+  border-left: 1px solid #3c6690;
+  border-top: 1px solid #3c6690;
+  border-bottom: 1px solid #3c6690;
+  box-shadow: 0px 1px 1px rgba(255,255,255,0.3) inset;
+  width: 25%;
+  padding: 10px 0;
 }
-table th {
-  font-size: .85em;
+
+table td{
+  text-align: center;
+  border-left: 1px solid #a8b7c5;
+  border-bottom: 1px solid #a8b7c5;
+  border-top:none;
+  box-shadow: 0px -3px 5px 1px #eee inset;
+  width: 25%;
+  padding: 10px 0;
 }
-table thead tr{
-  background-color: #167F92;
-  color:#fff;
+
+table td:last-child{
+  border-right: 1px solid #a8b7c5;
 }
-table tbody th {
-    background: #78bbc7;
-    color: #fff;
-}
-.txt{
-   text-align: left;
-   font-size: .85em;
-}
-.price{
-  text-align: right;
-  color: #167F92;
-  font-weight: bold;
-}
-.non{
-  background:#fff
-}
-@media screen and (max-width: 600px) {
-  table {
-    border: 0;
-    width:100%
-  }
-  table th{
-    background-color: #167F92;
-    display: block;
-    border-right: none;
-  }
-  table thead {
-    border: none;
-    clip: rect(0 0 0 0);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute;
-    width: 1px;
-  }
-  table tr {
-    display: block;
-    margin-bottom: .625em;
-  }
-  table td {
-    border-bottom: 1px solid #bbb;
-    display: block;
-    font-size: .8em;
-    text-align: right;
-    position: relative;
-    padding: .625em .625em .625em 4em;
-    border-right: none;
-  }
-  
-  table td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    position: absolute;
-    left: 10px;
-    color: #167F92;
-  }
-  table td:last-child {
-    border-bottom: 0;
-  }
-  table tbody th {
-    color: #fff;
-}
-}
--->
 </style>
 </head>
 
 <body>
 <table>
-        <thead>
-            <tr>
-                <td class="non"></td>
-                <th scope="col">項目</th>
-                <th scope="col">URL</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <th>ベーシックプラン</th>
-                <td data-label="内容" class="txt">{{ content }}</td>
-                <td data-label="価格" class="price">{{ content_url }}</td>
-            </tr>
-        </tbody>
-    </table>   
+  <tr>
+    <th>都道府県</th>
+    <th>面積</th>
+    <th>人口</th>
+    <th>人口密度</th>
+  </tr>
+  <tr>
+    <td>愛知県</td>
+    <td>5,172km2</td>
+    <td>7,526,911人</td>
+    <td>1,455人/km2</td>
+  </tr>
+  <tr>
+    <td>東京都</td>
+    <td>2,193km2</td>
+    <td>13,742,906人</td>
+    <td>6,263人/km2</td>
+  </tr>
+  <tr>
+    <td>大阪府</td>
+    <td>1,905km2</td>
+    <td>8,831,642人</td>
+    <td>4,635人/km2</td>
+  </tr>
+</table> 
 </body>
 </html>
